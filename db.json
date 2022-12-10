@@ -1,9 +1,76 @@
 {
-     "data": [
+     "products": [
           {
                "id": 1,
                "title": "json-server",
-               "author": "typicode"
+               "gender": "male",
+               "category": "Shirts",
+               "sale": false,
+               "discount": 20,
+               "price": 500,
+               "mrp": 1500,
+               "freeshipping": false,
+               "color": "red",
+               "material": "Canvas",
+               "brand": "Gucci",
+               "location": "lucknow",
+               "quantity": 0,
+               "desc": "my name is ...",
+               "thumbnail": "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+               "images": [
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg"
+               ]
+          },
+          {
+               "id": 1,
+               "title": "json-server",
+               "gender": "male",
+               "category": "Shirts",
+               "sale": false,
+               "discount": 20,
+               "price": 500,
+               "mrp": 1500,
+               "freeshipping": false,
+               "color": "red",
+               "material": "Canvas",
+               "brand": "Gucci",
+               "location": "lucknow",
+               "quantity": 0,
+               "desc": "my name is ...",
+               "thumbnail": "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+               "images": [
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg"
+               ]
+          },
+          {
+               "id": 1,
+               "title": "json-server",
+               "gender": "male",
+               "category": "Shirts",
+               "sale": false,
+               "discount": 20,
+               "price": 500,
+               "mrp": 1500,
+               "freeshipping": false,
+               "color": "red",
+               "material": "Canvas",
+               "brand": "Gucci",
+               "location": "lucknow",
+               "quantity": 0,
+               "desc": "my name is ...",
+               "thumbnail": "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+               "images": [
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg",
+                    "https://cdna.lystit.com/200/250/tr/photos/cettire/7fd01780/dsquared-Black-Paint-splattered-Distressed-Skinny-Jeans.jpeg"
+               ]
           }
      ]
 }

@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 const initialState = {
      isLoading: false,
      isError: false,
-     data: [],
+     product: [],
 };
 const reducer = (state = initialState, action) => {
      const { type, payload } = action;
@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
                return {
                     ...state,
                     isLoading: false,
-                    data: payload,
+                    product: payload,
                };
           case types.GET_DATA_FAILURE:
                return {

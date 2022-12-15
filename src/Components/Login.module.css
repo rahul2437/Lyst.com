@@ -1,0 +1,93 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 4rem;
+}
+.left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.left > h1 {
+  font-size: 28px;
+}
+.left > form {
+  display: grid;
+}
+.left > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.left > div > p {
+  color: gray;
+}
+.googleButton {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #333333;
+  border-radius: 5px;
+  color: #bcbcbc;
+  width: 100%;
+  font-size: 20px;
+}
+.loginButton {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #333333;
+  border-radius: 5px;
+  color: #bcbcbc;
+  width: 100%;
+  font-size: 20px;
+}
+.input {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px 0;
+}
+.googleButton > svg {
+  position: relative;
+  left: -24%;
+  font-size: 30px;
+}
+button:hover {
+  transform: scale(1.01);
+}
+.terms {
+  text-decoration: underline;
+  color: #000;
+}
+
+.right {
+  width: 60%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.loading {
+  background: url("../utils/loading.gif");
+}
+
+.sliding {
+  height: 100%;
+  background: url("../utils/loginScroller.webp");
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: cover;
+  animation: animatedBackground 150s linear infinite;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: 0 -10000px;
+  }
+}

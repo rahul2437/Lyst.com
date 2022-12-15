@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main > div {
+  width: 30%;
+}
+.main > div > div {
+  display: flex;
+  justify-content: center;
+}
+.main > div > div > img {
+  width: 200px;
+  border-radius: 100%;
+}
+.main > div > div > p {
+  font-size: 28px;
+  font-weight: bold;
+}
+.logoutButton {
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
+  margin: 10px 0;
+  background-color: #f93232;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 100%;
+  font-size: 20px;
+}

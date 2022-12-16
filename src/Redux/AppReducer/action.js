@@ -1,10 +1,10 @@
 import axios from "axios";
 import * as types from "./actionTypes";
-const getProduct = () => (dispatch) => {
+const getProduct = (params) => (dispatch) => {
      dispatch({ type: types.GET_DATA_REQUEST });
 
      return axios
-          .get("http://localhost:8080/product")
+          .get("http://localhost:8080/product", params)
           .then((r) =>
                dispatch({
                     type: types.GET_DATA_SUCCESS,

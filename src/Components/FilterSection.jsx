@@ -8,6 +8,7 @@ import {
      Checkbox,
      HStack,
      Radio,
+     RadioGroup,
      Select,
      Stack,
      Text,
@@ -23,6 +24,7 @@ import { maxPrice } from "../utils/maxPrice";
 import { designers } from "../utils/designers";
 import Colorbutton from "./Colorbutton";
 import { stores } from "../utils/stores";
+import { useSearchParams } from "react-router-dom";
 
 const FilterSection = () => {
      const [query, setQuery] = useState("");
@@ -35,6 +37,51 @@ const FilterSection = () => {
      const queryFromStore = useCallback((val) => {
           setStore(val);
      }, []);
+
+     const [searchParams, setSearchParams] = useSearchParams();
+     const initialCategory = searchParams.getAll("category");
+     const initialGender = searchParams.getAll("gender");
+     // console.log("initialGender:", initialGender);
+     const [category, setCategory] = useState(initialCategory || []);
+     const [gender, setGender] = useState(initialGender || []);
+     const [sale, setSale] = useState("");
+     const handleFilterCheckBox = (e) => {
+          const newCategories = [...category];
+          const newGender = [...gender];
+
+          if (
+               newCategories.includes(e.target.value) &&
+               newGender.includes(e.target.value)
+          ) {
+               newCategories.splice(newCategories.indexOf(e.target.value), 1);
+               newGender.splice(newGender.indexOf(e.target.value), 1);
+          } else if (newGender.includes(e.target.value)) {
+               newGender.splice(newGender.indexOf(e.target.value), 1);
+          } else if (newCategories.includes(e.target.value)) {
+               newCategories.splice(newCategories.indexOf(e.target.value), 1);
+          } else {
+               if (e.target.value == "mens" || e.target.value == "women") {
+                    newGender.push(e.target.value);
+               } else {
+                    newCategories.push(e.target.value);
+               }
+          }
+          setCategory(newCategories);
+          setGender(newGender);
+     };
+
+     useEffect(() => {
+          let params = {};
+          console.log("sale:", sale);
+          console.log("category:", category);
+          category && (params.category = category);
+          gender && (params.gender = gender);
+          sale && (params.sale = sale);
+
+          // console.log("params", params);
+          setSearchParams(params);
+     }, [category, setSearchParams, gender, sale]);
+
      useEffect(() => {
           if (query === "" && store === "") {
                setSuggestions([]);
@@ -71,6 +118,7 @@ const FilterSection = () => {
                }
           }
      }, [query, store]);
+
      return (
           <Box>
                {/* Filter and Clear */}
@@ -110,8 +158,23 @@ const FilterSection = () => {
                               </h2>
                               <AccordionPanel pb={4}>
                                    <Stack direction="column">
-                                        <Radio value="Women's">Women's</Radio>
-                                        <Radio value="Men's">Men's</Radio>
+                                        <Radio
+                                             // onChange={handleChange}
+                                             type={"radio"}
+                                             checked={gender.includes("women")}
+                                             onChange={handleFilterCheckBox}
+                                             value="women"
+                                        >
+                                             Women's
+                                        </Radio>
+                                        <Radio
+                                             type={"radio"}
+                                             checked={gender.includes("mens")}
+                                             onChange={handleFilterCheckBox}
+                                             value="mens"
+                                        >
+                                             Men's
+                                        </Radio>
                                    </Stack>
                               </AccordionPanel>
                          </AccordionItem>
@@ -132,14 +195,62 @@ const FilterSection = () => {
                               </h2>
                               <AccordionPanel pb={4}>
                                    <Stack direction="column">
-                                        <Radio value="Clothing">Clothing</Radio>
-                                        <Radio value="Shoes">Shoes</Radio>
-                                        <Radio value="Accessories">
+                                        <Radio
+                                             type={"radio"}
+                                             checked={category.includes(
+                                                  "Clothing"
+                                             )}
+                                             onChange={handleFilterCheckBox}
+                                             value="Clothing"
+                                        >
+                                             Clothing
+                                        </Radio>
+                                        <Radio
+                                             type={"radio"}
+                                             checked={category.includes(
+                                                  "Shoes"
+                                             )}
+                                             onChange={handleFilterCheckBox}
+                                             value="Shoes"
+                                        >
+                                             Shoes
+                                        </Radio>
+                                        <Radio
+                                             type={"radio"}
+                                             checked={category.includes(
+                                                  "Accessories"
+                                             )}
+                                             onChange={handleFilterCheckBox}
+                                             value="Accessories"
+                                        >
                                              Accessories
                                         </Radio>
-                                        <Radio value="Bags">Bags</Radio>
-                                        <Radio value="Jewelry">Jewelry</Radio>
-                                        <Radio value="Home">Home</Radio>
+                                        <Radio
+                                             type={"radio"}
+                                             checked={category.includes("Bags")}
+                                             onChange={handleFilterCheckBox}
+                                             value="Bags"
+                                        >
+                                             Bags
+                                        </Radio>
+                                        <Radio
+                                             type={"radio"}
+                                             checked={category.includes(
+                                                  "Jewelry"
+                                             )}
+                                             onChange={handleFilterCheckBox}
+                                             value="Jewelry"
+                                        >
+                                             Jewelry
+                                        </Radio>
+                                        <Radio
+                                             type={"radio"}
+                                             checked={category.includes("Home")}
+                                             onChange={handleFilterCheckBox}
+                                             value="Home"
+                                        >
+                                             Home
+                                        </Radio>
                                    </Stack>
                               </AccordionPanel>
                          </AccordionItem>
@@ -159,18 +270,20 @@ const FilterSection = () => {
                                    </AccordionButton>
                               </h2>
                               <AccordionPanel pb={4}>
-                                   <Stack direction="column">
-                                        <Radio value="On sale">On sale</Radio>
-                                        <Radio value="20% off or more">
-                                             20% off or more
-                                        </Radio>
-                                        <Radio value="50% off or more">
-                                             50% off or more
-                                        </Radio>
-                                        <Radio value="70% off or more">
-                                             70% off or more
-                                        </Radio>
-                                   </Stack>
+                                   <RadioGroup onChange={setSale} value={sale}>
+                                        <Stack direction="column">
+                                             <Radio value="">On sale</Radio>
+                                             <Radio value="20">
+                                                  20% off or more
+                                             </Radio>
+                                             <Radio value="40">
+                                                  50% off or more
+                                             </Radio>
+                                             <Radio value="70">
+                                                  70% off or more
+                                             </Radio>
+                                        </Stack>
+                                   </RadioGroup>
                               </AccordionPanel>
                          </AccordionItem>
                          {/* Price Accordion */}
@@ -270,8 +383,11 @@ const FilterSection = () => {
                               <AccordionPanel pb={4}>
                                    <Stack direction="row" wrap={"wrap"}>
                                         {/* <Checkbox>Free shipping</Checkbox> */}
-                                        {colors?.map((item) => (
-                                             <Colorbutton {...item} />
+                                        {colors?.map((item, index) => (
+                                             <Colorbutton
+                                                  key={index}
+                                                  {...item}
+                                             />
                                         ))}
                                    </Stack>
                               </AccordionPanel>

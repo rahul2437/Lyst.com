@@ -1,20 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import FilterSection from "./FilterSection";
-import Productspage from "./Productspage";
+import FilterSection from "../Components/FilterSection";
+import Productspage from "../Components/Productspage";
 
 const Products = () => {
      return (
-          <div>
-               <ProductPageWrapper>
-                    <FilterWrapper>
-                         <FilterSection />
-                    </FilterWrapper>
-                    <ProductWrapper>
-                         <Productspage />
-                    </ProductWrapper>
-               </ProductPageWrapper>
-          </div>
+          <ProductPageWrapper>
+               <FilterWrapper>
+                    <FilterSection />
+               </FilterWrapper>
+               <ProductWrapper>
+                    <Productspage />
+               </ProductWrapper>
+          </ProductPageWrapper>
      );
 };
 const ProductPageWrapper = styled.div`
@@ -23,7 +21,7 @@ const ProductPageWrapper = styled.div`
 `;
 const FilterWrapper = styled.div`
      background-color: #ffffff;
-     width: 300px;
+     width: 350px;
      border: 1px solid black;
 `;
 const ProductWrapper = styled.div`
@@ -32,7 +30,7 @@ const ProductWrapper = styled.div`
      grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
      grid-gap: 20px;
      justify-content: center;
-     border: 1px solid green;
+     border: 10px solid green;
 `;
 
 export default Products;

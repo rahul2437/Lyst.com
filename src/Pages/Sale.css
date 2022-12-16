@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head{
+    position: relative;
+    text-align: center; 
+}
+.head>img{
+    filter: brightness(40%);
+    width: 80%;
+    height: 260px;
+}
+.head>p{
+    position: absolute;
+    bottom: 40%;
+    left: 40%;
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    font-size: 90px;
+}
+.main2{
+    display: flex;
+    text-align: left;
+    justify-content: space-around;
+    margin: auto;
+    bottom:50%;
+    width: 80%;
+    padding: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.main2>div{
+    cursor: pointer;
+}
+.main2>div>p:nth-child(1){
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main2>div>p:nth-child(2){
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.one{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    margin: auto;
+    width: 85%;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.one>img{
+    margin:auto;
+    width: 100%;
+    height:200px;
+}
+.one>p{
+    font-size: 30px;
+}
+.four{
+    width: 60%;
+}
+.four>img{
+    width: 50%;
+}
+.four>p:nth-child(3){
+    font-size: 20px;
+    cursor: pointer;
+}
+.four>p:nth-child(2){
+    font-size: 30px;
+}
+.carding{
+    cursor: pointer;
+}
+.carding>p{
+    font-size: 30px;
+}
+.raj p:nth-child(4){
+    color: red;
+}
+.raj>img{
+    width: 90%;
+}
+.card{
+    display: flex;
+    align-items: center;
+    height: 500px;
+    border: 1px solid black; 
+}
+.card1>h1{
+    margin:10px;
+    text-align: center;
+}
+.card4{   
+    height: 500px;
+    border: 1px solid black;
+    background-color: greenyellow;
+    
+}
+.card4>h2{
+    margin-top: 30%;
+}
+.card4>button{
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 40px;
+    background-color: black;
+    color:white;
+}
+.card4:hover {
+    background-color: rgb(80, 188, 141);
+}
+.four{
+    margin-top: 30px;
+}
+.four>img{
+    width: 160%;
+    height: 400px;
+}
+@media screen and (max-width:1100px){
+    .main2{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .main2>div{
+        margin-top: 20px;
+    }
+    .main2>div>p:nth-child(1){
+        text-align: left;
+        font-size: 28px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .main2>div>p:nth-child(2){
+        text-align: left;
+        font-size: 19px;
+        margin-top: 8px;
+    }
+    .card{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        height: 600px;
+        width: 80%;
+        margin: auto;
+    }
+    .card4{
+        width: 300%;
+        height: 340px;
+    }
+
+}

@@ -7,7 +7,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { ref, set } from "firebase/database";
 
 
-
 const emailLogin = (payload) => dispatch => {
   const { email, password } = payload;
   dispatch({ type: types.LOGIN_REQUEST });

@@ -1,92 +1,46 @@
-import { StarIcon } from "@chakra-ui/icons";
-import { Badge, Box, Image } from "@chakra-ui/react";
+import { BiLink } from "react-icons/bi";
+import { ImHeart } from "react-icons/im";
+import { Box, HStack, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import { FiHeart } from "react-icons/fi";
 
-const ProductCard = () => {
-     const property = {
-          imageUrl: "https://bit.ly/2Z4KKcF",
-          imageAlt: "Rear view of modern home with pool",
-          beds: 3,
-          baths: 2,
-          title: "Modern home in city center in the heart of historic Los Angeles",
-          formattedPrice: "$1,900.00",
-          reviewCount: 34,
-          rating: 4,
-     };
+const ProductCard = ({ item }) => {
+     const { imageUrl, brand, category, color, mrp, price } = item;
      return (
-          <>
-               <Box
-                    maxW="sm"
-                    borderWidth="1px"
-                    borderRadius="lg"
-                    overflow="hidden"
-               >
-                    <Image src={property.imageUrl} alt={property.imageAlt} />
-
-                    <Box p="6">
-                         <Box display="flex" alignItems="baseline">
-                              <Badge
-                                   borderRadius="full"
-                                   px="2"
-                                   colorScheme="teal"
-                              >
-                                   New
-                              </Badge>
-                              <Box
-                                   color="gray.500"
-                                   fontWeight="semibold"
-                                   letterSpacing="wide"
-                                   fontSize="xs"
-                                   textTransform="uppercase"
-                                   ml="2"
-                              >
-                                   {property.beds} beds &bull; {property.baths}{" "}
-                                   baths
-                              </Box>
-                         </Box>
-
-                         <Box
-                              mt="1"
-                              fontWeight="semibold"
-                              as="h4"
-                              lineHeight="tight"
-                              noOfLines={1}
-                         >
-                              {property.title}
-                         </Box>
-
-                         <Box>
-                              {property.formattedPrice}
-                              <Box as="span" color="gray.600" fontSize="sm">
-                                   / wk
-                              </Box>
-                         </Box>
-
-                         <Box display="flex" mt="2" alignItems="center">
-                              {Array(5)
-                                   .fill("")
-                                   .map((_, i) => (
-                                        <StarIcon
-                                             key={i}
-                                             color={
-                                                  i < property.rating
-                                                       ? "teal.500"
-                                                       : "gray.300"
-                                             }
-                                        />
-                                   ))}
-                              <Box
-                                   as="span"
-                                   ml="2"
-                                   color="gray.600"
-                                   fontSize="sm"
-                              >
-                                   {property.reviewCount} reviews
-                              </Box>
-                         </Box>
-                    </Box>
-               </Box>
-          </>
+          <Box
+               w="280px"
+               borderWidth="1px"
+               borderRadius="lg"
+               p={5}
+               margin={"auto"}
+          >
+               <Image src={imageUrl} alt={"imageAlt"} />
+               <HStack justifyContent={"end"}>
+                    <FiHeart size={"30px"} bg="red" />
+               </HStack>
+               <HStack>
+                    <Text fontWeight={"bold"}>{brand}</Text>
+               </HStack>
+               <HStack>
+                    <Text>Storm-fit Windrunner Long Parka</Text>
+               </HStack>
+               <HStack>
+                    <Text>{category} -</Text>
+                    <Text>{color}</Text>
+               </HStack>
+               <HStack>
+                    <Text>
+                         <s>${mrp}</s>
+                    </Text>
+                    <Text fontWeight={"medium"} color={"red"}>
+                         ${price}
+                    </Text>
+               </HStack>
+               <HStack>
+                    <BiLink />
+                    <Text>scotts</Text>
+               </HStack>
+          </Box>
      );
 };
 

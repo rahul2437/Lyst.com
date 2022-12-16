@@ -30,7 +30,6 @@ const ProductWrapper = styled.div`
      grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
      grid-gap: 20px;
      justify-content: center;
-     border: 10px solid green;
 `;
 
 export default Products;

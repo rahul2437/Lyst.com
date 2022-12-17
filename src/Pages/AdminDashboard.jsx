@@ -1,8 +1,7 @@
 import {
-     Alert,
-     AlertIcon,
      Box,
      Button,
+     Divider,
      Image,
      Table,
      TableCaption,
@@ -26,8 +25,7 @@ import { GrUpdate } from "react-icons/gr";
 const AdminDashboard = () => {
      const dispatch = useDispatch();
      const { product } = useSelector((store) => store.AppReducer, shallowEqual);
-     console.log("product:", product);
-     const [count, setCount] = useState("");
+     const [elem, setElem] = useState(5);
      const deleteHandler = (id) => {
           dispatch(deleteProducts(id)).then(() => dispatch(getProduct()));
      };
@@ -37,7 +35,10 @@ const AdminDashboard = () => {
                dispatch(getProduct());
           }
      }, [product.length, dispatch]);
-
+     const loadMore = () => {
+          setElem(elem + 10);
+     };
+     let slicedData = product?.slice(0, elem);
      return (
           <Box maxW={"1500px"}>
                <AdminNavbar />
@@ -47,20 +48,10 @@ const AdminDashboard = () => {
                               <Tr>
                                    <Th>Sr.no</Th>
                                    <Th>Brand</Th>
-                                   {/* <Box> */}
                                    <Th>title</Th>
-                                   {/* </Box> */}
                                    <Th>gender</Th>
                                    <Th>category</Th>
-                                   {/* <Th isNumeric>sale</Th> */}
                                    <Th isNumeric>price</Th>
-                                   {/* <Th isNumeric>mrp</Th> */}
-                                   {/* <Th isNumeric>freeshippialse</Th> */}
-                                   {/* <Th>color</Th> */}
-                                   {/* <Th>material</Th> */}
-                                   {/* <Th>location</Th> */}
-                                   {/* <Th isNumeric>quantity</Th> */}
-                                   {/* <Th>desc</Th> */}
                                    <Th isNumeric>discount</Th>
                                    <Th>imgurl</Th>
                                    <Th>Delete</Th>
@@ -69,11 +60,10 @@ const AdminDashboard = () => {
                          </Thead>
                          <Tbody>
                               {product.length > 0 &&
-                                   product?.map((item, index) => {
+                                   slicedData?.map((item, index) => {
                                         return (
                                              <Tr key={item.id}>
                                                   <Td>{index + 1}</Td>
-
                                                   <Td>
                                                        <Text
                                                             inlineSize={"150px"}
@@ -96,25 +86,9 @@ const AdminDashboard = () => {
 
                                                   <Td>{item.gender}</Td>
                                                   <Td>{item.category}</Td>
-                                                  {/* <Td isNumeric>
-                                                       {item.sale}%
-                                                  </Td> */}
                                                   <Td isNumeric>
                                                        ₹{item.price}
                                                   </Td>
-                                                  {/* <Td isNumeric>{item.mrp}</Td> */}
-                                                  {/* <Td>
-                                                       {item.freeshippialse
-                                                            ? "Avlible"
-                                                            : "Not Applicable"}
-                                                  </Td> */}
-                                                  {/* <Td>{item.color}</Td> */}
-                                                  {/* <Td>{item.material}</Td> */}
-                                                  {/* <Td>{item.location}</Td> */}
-                                                  {/* <Td isNumeric>
-                                                       {item.quantity}
-                                                  </Td> */}
-                                                  {/* <Td>{item.desc}</Td> */}
                                                   <Td isNumeric>
                                                        {item.discount}%
                                                   </Td>
@@ -151,7 +125,13 @@ const AdminDashboard = () => {
                          </Tbody>
                          <Tfoot></Tfoot>
                          <TableCaption>
-                              {/* Total Count of product : {item.length} */}
+                              <>
+                                   Showing {elem} / {product?.length}
+                              </>
+                              <Divider w={"150px"} m={"auto"} mt={4} mb={4} />
+                              <Button onClick={() => loadMore()}>
+                                   Load more
+                              </Button>
                          </TableCaption>
                     </Table>
                </TableContainer>

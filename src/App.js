@@ -5,8 +5,8 @@ import Products from "./Pages/Products";
 function App() {
      return (
           <div className="App">
-               {/* <MainRoutes /> */}
-               <Products />
+               <MainRoutes />
+               {/* <Products /> */}
           </div>
      );
 }

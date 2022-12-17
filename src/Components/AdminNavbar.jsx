@@ -1,8 +1,16 @@
 import { Box, Button } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { shallowEqual, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const AdminNavbar = () => {
+     const { product } = useSelector((store) => store.AppReducer, shallowEqual);
+
+     const [len, setLen] = useState(0);
+     useEffect(() => {
+          setLen(product.length);
+     }, [product.length]);
+
      return (
           <Box h="50px" width={"90%"} m="auto" display={"flex"}>
                <Box
@@ -11,20 +19,24 @@ const AdminNavbar = () => {
                     justifyContent="space-between"
                     m="auto"
                >
-                    <Button
-                         h="50px"
-                         borderRadius={"none"}
-                         colorScheme="blackAlpha"
-                    >
-                         BlackAlpha
-                    </Button>
-                    <Link to="/admin">
+                    <Link to="/">
                          <Button
                               h="50px"
+                              mr={2}
                               borderRadius={"none"}
                               colorScheme="blackAlpha"
                          >
-                              Dashboard
+                              Back to main site
+                         </Button>
+                    </Link>
+                    <Link to="/admin">
+                         <Button
+                              h="50px"
+                              mr={2}
+                              borderRadius={"none"}
+                              colorScheme="blackAlpha"
+                         >
+                              Admin Dashboard
                          </Button>
                     </Link>
                     <Link to="/admin/add">
@@ -43,7 +55,7 @@ const AdminNavbar = () => {
                          borderRadius={"none"}
                          colorScheme="blackAlpha"
                     >
-                         Total items - {0}
+                         Total items - {len}
                     </Button>
                     <Button
                          h="50px"

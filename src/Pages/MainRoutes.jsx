@@ -5,18 +5,26 @@ import Navbar from "../Components/Navbar";
 import Login from "../Components/Login";
 import SignUp from "../Components/SignUp";
 import Profile from "../Components/Profile";
+import AdminDashboard from "./AdminDashboard";
+import AdminEdit from "../Components/AdminEdit";
+import AddProduct from "../Components/AddProduct";
+import Products from "./Products";
 const MainRoutes = () => {
-  return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="*" element={<div>page not found</div>} />
-      </Routes>
-    </>
-  );
+     return (
+          <>
+               <Navbar />
+               <Routes>
+                    <Route path="/" element={<Homepage />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/admin" element={<AdminDashboard />} />
+                    <Route path="/admin/:id/edit" element={<AdminEdit />} />
+                    <Route path="/admin/add" element={<AddProduct />} />
+                    <Route path="/product" element={<Products />} />
+                    <Route path="*" element={<div>page not found</div>} />
+               </Routes>
+          </>
+     );
 };
 
 export default MainRoutes;

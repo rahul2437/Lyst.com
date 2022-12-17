@@ -1,4 +1,12 @@
-import { Box, Button, color, Heading, input, Text } from "@chakra-ui/react";
+import {
+     Box,
+     Button,
+     color,
+     Heading,
+     Input,
+     Select,
+     Text,
+} from "@chakra-ui/react";
 import React, { useReducer } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -11,13 +19,13 @@ const initialState = {
      gender: "",
      category: "",
      sale: "",
-     price: "",
+     price: 0,
      mrp: "",
      freeshipping: false,
      color: "",
      material: "",
      location: "",
-     quantity: "",
+     quantity: 0,
      desc: "",
      discount: "",
      imgurl: "",
@@ -81,15 +89,16 @@ const AddProduct = () => {
                               sale: "",
                               price: "",
                               mrp: "",
-                              freeshipping: "",
+                              freeshipping: false,
                               color: "",
                               material: "",
                               location: "",
-                              quantity: "",
+                              quantity: 0,
                               desc: "",
                               discount: "",
                               imgurl: "",
                          });
+                         navigate("/admin");
                     });
           }
      };
@@ -109,19 +118,12 @@ const AddProduct = () => {
                     }}
                >
                     {/* brand */}
-                    <div
-                         style={
-                              {
-                                   // display: "flex",
-                                   // flexDirection: "column",
-                                   // borderBottom: "1px solid teal",
-                              }
-                         }
-                    >
+                    <div>
                          <label style={{ color: "red" }} className="form-label">
                               Product brand *
                          </label>
-                         <input
+                         <Input
+                              size="md"
                               type="text"
                               value={productState.brand}
                               onChange={(e) =>
@@ -133,20 +135,12 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* title */}
-                    <div
-                         style={
-                              {
-                                   // display: "flex",
-                                   // flexDirection: "column",
-                                   // borderBottom: "1px solid teal",
-                              }
-                         }
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Product title *
                          </label>
-                         <input
+                         <Input
+                              size="md"
                               type="text"
                               value={productState.title}
                               onChange={(e) =>
@@ -158,18 +152,12 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* image */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Product Image *
                          </label>
-                         <input
+                         <Input
+                              size="md"
                               type="url"
                               placeholder="Image URL"
                               value={productState.imgurl}
@@ -182,19 +170,13 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* Product MRP */}
-                    <div
-                         className="form-element-div"
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Product MRP *
                          </label>
-                         <input
-                              type="text"
+                         <Input
+                              size="md"
+                              type="number"
                               value={productState.mrp}
                               onChange={(e) =>
                                    setProductState({
@@ -205,19 +187,13 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* price */}
-                    <div
-                         className="form-element-div"
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Price *
                          </label>
-                         <input
-                              type="text"
+                         <Input
+                              size="md"
+                              type="number"
                               value={productState.price}
                               onChange={(e) =>
                                    setProductState({
@@ -228,18 +204,12 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* Description */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Description *
                          </label>
-                         <input
+                         <Input
+                              size="md"
                               type="text"
                               value={productState.desc}
                               onChange={(e) =>
@@ -251,19 +221,13 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* sale */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               sale *
                          </label>
-                         <input
-                              type="text"
+                         <Input
+                              size="md"
+                              type="number"
                               value={productState.sale}
                               onChange={(e) =>
                                    setProductState({
@@ -274,18 +238,12 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* material */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               material *
                          </label>
-                         <input
+                         <Input
+                              size="md"
                               type="text"
                               value={productState.material}
                               onChange={(e) =>
@@ -297,19 +255,14 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* quantity */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               quantity *
                          </label>
-                         <input
-                              type="text"
+                         <Input
+                              isDisabled
+                              size="md"
+                              type="number"
                               value={productState.quantity}
                               onChange={(e) =>
                                    setProductState({
@@ -320,19 +273,13 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* discount */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               discount *
                          </label>
-                         <input
-                              type="text"
+                         <Input
+                              size="md"
+                              type="number"
                               value={productState.discount}
                               onChange={(e) =>
                                    setProductState({
@@ -343,18 +290,12 @@ const AddProduct = () => {
                          />
                     </div>
                     {/* category */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Product category *
                          </label>
-                         <select
+                         <Select
+                              size="md"
                               value={productState.category}
                               onChange={(e) =>
                                    setProductState({
@@ -370,21 +311,14 @@ const AddProduct = () => {
                               <option value="Bags">Bags</option>
                               <option value="Jewelry">Jewelry</option>
                               <option value="Home">Home</option>
-                         </select>
+                         </Select>
                     </div>
                     {/* gender */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Product gender *
                          </label>
-                         <select
+                         <Select
                               value={productState.gender}
                               onChange={(e) =>
                                    setProductState({
@@ -396,21 +330,14 @@ const AddProduct = () => {
                               <option value="">Select gender</option>
                               <option value="mens">mens</option>
                               <option value="women">women</option>
-                         </select>
+                         </Select>
                     </div>
                     {/* color */}
-                    <div
-                         style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              borderBottom: "2px solid teal",
-                         }}
-                         className="form-element-div"
-                    >
+                    <div className="form-element-div">
                          <label style={{ color: "red" }} className="form-label">
                               Product color *
                          </label>
-                         <select
+                         <Select
                               value={productState.color}
                               onChange={(e) =>
                                    setProductState({
@@ -432,7 +359,7 @@ const AddProduct = () => {
                               <option value="Red">Red</option>
                               <option value="White">White</option>
                               <option value="Yellow">Yellow</option>
-                         </select>
+                         </Select>
                     </div>
                     <div>
                          <Button
@@ -441,8 +368,6 @@ const AddProduct = () => {
                               data-cy="add-product-button"
                               onClick={addHandler}
                               w="150px"
-                              // alignItems="center"
-                              // justifyContent="center"
                               marginLeft="200px"
                          >
                               Add Product

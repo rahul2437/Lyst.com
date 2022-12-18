@@ -9,6 +9,7 @@ import AdminDashboard from "./AdminDashboard";
 import AdminEdit from "../Components/AdminEdit";
 import AddProduct from "../Components/AddProduct";
 import Products from "./Products";
+import Footer from "../Components/Footer";
 const MainRoutes = () => {
      return (
           <>
@@ -23,6 +24,7 @@ const MainRoutes = () => {
                     <Route path="/product" element={<Products />} />
                     <Route path="*" element={<div>page not found</div>} />
                </Routes>
+               <Footer />
           </>
      );
 };

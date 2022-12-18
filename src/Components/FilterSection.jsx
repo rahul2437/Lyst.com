@@ -136,7 +136,6 @@ const FilterSection = () => {
                     {/* Accordion */}
 
                     <Accordion
-                         //  border={"1px solid red"}
                          width="350px"
                          allowToggle
                     >
@@ -334,8 +333,9 @@ const FilterSection = () => {
                               </h2>
                               <AccordionPanel pb={4}>
                                    <Stack direction="row" wrap={"wrap"}>
-                                        {colors?.map((item) => (
+                                        {colors?.map((item, index) => (
                                              <ButtonGroup
+                                                  key={index}
                                                   size="sm"
                                                   isAttached
                                                   variant="outline"

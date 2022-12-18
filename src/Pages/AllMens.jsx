@@ -7,7 +7,7 @@ import {
   Child1,
   Child2,
   Child3,
-} from "../StyledComponents/AllMens";
+} from "../utils/AllMens";
 import { Link } from "react-router-dom";
 
 const AllMens = () => {

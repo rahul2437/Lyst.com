@@ -14,6 +14,9 @@ import ProtectedRoute from "./ProtectedRoute";
 import Checkout from "./Checkout";
 import PaymentPage from "./PaymentPage";
 import PaymentSuccess from "./PaymentSuccess";
+import Sale from "./Sale";
+import AllMens from "./AllMens";
+import HelpCenter from "./HelpCenter"
 const MainRoutes = () => {
   return (
     <>
@@ -83,6 +86,30 @@ const MainRoutes = () => {
           element={
             <ProtectedRoute>
               <PaymentSuccess />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sale"
+          element={
+            <ProtectedRoute>
+              <Sale />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/allmens"
+          element={
+            <ProtectedRoute>
+              <AllMens />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/helpcenter"
+          element={
+            <ProtectedRoute>
+              <HelpCenter />
             </ProtectedRoute>
           }
         />

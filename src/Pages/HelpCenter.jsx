@@ -1,5 +1,6 @@
 import React from "react";
 import "./HelpCenter.css";
+import { Link } from "react-router-dom";
 
 const HelpCenter = () => {
   return (
@@ -122,7 +123,7 @@ const HelpCenter = () => {
         <div className="last">
             <p>Lyst Help Center</p>
             <hr />
-            <p>Back to Lyst.com</p>
+            <Link to="/"><p>Back to Lyst.com</p></Link>
         </div>
     </div>
   );

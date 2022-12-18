@@ -62,7 +62,7 @@ const Navbar = (props) => {
               </MenuButton>
               <MenuList>
                 <MenuGroup textAlign={"center"}>
-                  <MenuItem>Help Center</MenuItem>
+                  <Link to="/helpcenter"><MenuItem>Help Center</MenuItem></Link>
                   <MenuDivider />
                   <MenuItem>Contact us </MenuItem>
                   <MenuDivider />

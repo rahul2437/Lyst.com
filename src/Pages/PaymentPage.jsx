@@ -10,7 +10,7 @@ import {
   BillingWrapper,
   Wrapper,
   ButtonWrap,
-} from "../StyledComponents/Payment";
+} from "../utils/Payment";
 const PaymentPage = () => {
   const [user, setUser] = useState({
     first: "",
@@ -35,9 +35,6 @@ const PaymentPage = () => {
   };
   return (
     <div>
-      <HeadWrapper>
-        <h1>MYTHERESA</h1>
-      </HeadWrapper>
       <LineWrapper>
         <p>SHOPPING BAG</p>
         <p>SIGN IN</p>

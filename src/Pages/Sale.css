@@ -11,6 +11,7 @@
 .head>img{
     filter: brightness(40%);
     width: 80%;
+    margin: auto;
     height: 260px;
 }
 .head>p{

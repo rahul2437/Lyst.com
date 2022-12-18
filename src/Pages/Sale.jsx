@@ -2,6 +2,7 @@ import React from "react";
 import "./Sale.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
 
 const Sale = () => {
      const responsive = {
@@ -55,20 +56,20 @@ const Sale = () => {
                     </div>
                </div>
                <Carousel responsive={responsive} style={{ Width: "60%" }}>
-                    <div className="one">
+                    <Link to="/product"><div className="one">
                          <img
                               src="https://cdna.lystit.com/cms/designer_rail_gucci_eca9e74796.jpg"
                               alt=""
                          />
                          <p>GUCCI ON SALE</p>
-                    </div>
-                    <div className="one">
+                    </div></Link>
+                    <Link to="/product"><div className="one">
                          <img
                               src="https://cdna.lystit.com/cms/designer_rail_saint_laurent_2031eb80f7.jpeg"
                               alt=""
                          />
                          <p>SAINT LAURENT ON SALE</p>
-                    </div>
+                    </div></Link>
                     <div className="one">
                          <img
                               src="https://cdna.lystit.com/cms/designer_rail_off_white_co_virgil_abloh_d8c6b37a9f.jpeg"

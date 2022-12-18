@@ -30,7 +30,7 @@ const Cart = () => {
 
       <div className="cart__right">
         <Total />
-        <Link to={"/checkout"}>
+        <Link to={"/payment"}>
           <Button colorScheme="blackAlpha">Checkout</Button>
         </Link>
       </div>

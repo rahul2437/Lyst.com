@@ -19,21 +19,20 @@ const PaymentPage = () => {
     address: "",
     mobile: "",
     street: "",
-    Zip: ""
+    Zip: "",
   });
 
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
-    setUser({...user, [name]:value})
+    setUser({ ...user, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user)
-   
-  }
+    console.log(user);
+  };
   return (
     <div>
       <HeadWrapper>
@@ -136,7 +135,9 @@ const PaymentPage = () => {
               onChange={handleInput}
               required
             />
-            <Link to="/Checkout"><button>PROCEED TO CHECKOUT</button></Link>
+            <Link to="/checkout">
+              <button>PROCEED TO CHECKOUT</button>
+            </Link>
           </form>
         </FormWrapper>
         <Details>
@@ -147,7 +148,7 @@ const PaymentPage = () => {
           </span>
           <p>PACKAGING OPTIONS</p>
           <div>
-            <input type="radio" checked/>
+            <input type="radio" checked />
             Mytheresa packaging
             <p>Free</p>
             <img
@@ -166,7 +167,7 @@ const PaymentPage = () => {
           </div>
           <div>
             <p>CLIMATE NEUTRAL OPTION</p>
-            <input type="checkbox" checked/>{" "}
+            <input type="checkbox" checked />{" "}
             <span>Help offset the CO2 emission &#8364; 0.40 of your order</span>
           </div>
         </Details>

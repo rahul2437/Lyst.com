@@ -1,12 +1,4 @@
-import {
-     Box,
-     Button,
-     color,
-     Heading,
-     Input,
-     Select,
-     Text,
-} from "@chakra-ui/react";
+import { Box, Button, Heading, Input, Select } from "@chakra-ui/react";
 import React, { useReducer } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";

@@ -20,3 +20,5 @@ rahulsheelavantar@gmail.com
 
 Vivek Goswami
 vivek.goswami@masaischool.com
+
+npm i --legec

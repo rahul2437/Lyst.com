@@ -2,10 +2,28 @@
   "product": [
     {
       "id": 1,
-      "brand": "Fear Of ",
-      "title": "Hello fear of god",
+      "brand": "Fear of God beta 1",
+      "title": "Hello fear of god1",
       "gender": "women",
-      "category": "clothing",
+      "category": "Clothing",
+      "sale": 10,
+      "price": 500,
+      "mrp": 1500,
+      "freeshipping": false,
+      "color": "Gray",
+      "material": "Canvas",
+      "location": "lucknow",
+      "quantity": 0,
+      "desc": "my name is ...",
+      "discount": 20,
+      "imgurl": "https://cdna.lystit.com/200/250/tr/photos/royalculture/94d07e9a/fear-of-god-OLIVEKHAKI-Essentials-Hoodie.jpeg"
+    },
+    {
+      "id": 2,
+      "brand": "Mufler",
+      "title": "Jersey-paneled High-rise Slim Jeans - Blue",
+      "gender": "women",
+      "category": "Clothing",
       "sale": 10,
       "price": 500,
       "mrp": 1500,
@@ -16,7 +34,7 @@
       "quantity": 0,
       "desc": "my name is ...",
       "discount": 20,
-      "imgurl": "https://cdna.lystit.com/200/250/tr/photos/royalculture/94d07e9a/fear-of-god-OLIVEKHAKI-Essentials-Hoodie.jpeg"
+      "imgurl": "https://cdna.lystit.com/200/250/tr/photos/mytheresa/22290e8a/mugler-MEDIUM-BLUE-BLACK-Paneled-Jersey-And-Denim-Jeans.jpeg"
     },
     {
       "id": 3,
@@ -33,7 +51,7 @@
       "location": "lucknow",
       "quantity": 0,
       "desc": "my name is ...",
-      "discount": "10",
+      "discount": 20,
       "imgurl": "https://cdna.lystit.com/200/250/tr/photos/gilt/e041d24a/burberry-Black-Coat.jpeg"
     },
     {

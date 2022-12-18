@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import Total from "./Total";
-
+import { Button } from "@chakra-ui/button";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const cart = useSelector((store) => store.cartReducer.cart);
 
@@ -29,6 +30,9 @@ const Cart = () => {
 
       <div className="cart__right">
         <Total />
+        <Link to={"/checkout"}>
+          <Button colorScheme="blackAlpha">Checkout</Button>
+        </Link>
       </div>
     </div>
   );

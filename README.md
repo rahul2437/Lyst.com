@@ -49,9 +49,9 @@ Designed the clone with all features within the stipulated time. Used and applie
 
 -    **Home Page**
 
-![lyst](src\assets\homepage.png)
+<img src="https://res.cloudinary.com/dtzoydf3b/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1671377749/Screenshot_8815_b12icn.jpg" alt="product page" />
 
-![airtable com](src\assets\productpage.png)
+<img src="https://res.cloudinary.com/dtzoydf3b/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1671377749/Screenshot_8817_tdtxbw.jpg" alt="product page"/>
 
 ## Installation
 

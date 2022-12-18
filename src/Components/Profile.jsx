@@ -6,7 +6,6 @@ import styles from "./Profile.module.css";
 const Profile = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.AuthReducer.user);
-  console.log(user);
 
   return (
     <div className={styles.main}>

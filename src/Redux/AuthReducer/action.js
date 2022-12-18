@@ -39,7 +39,6 @@ const GoogleLogin = () => async dispatch => {
   dispatch({ type: types.LOGIN_REQUEST });
   try {
     const result = await signInWithPopup(auth, googleProvider);
-    console.log(result);
     dispatch({ type: types.LOGIN_SUCCESS, payload: result?.user })
   } catch (err) {
     dispatch({ type: types.LOGIN_FAILURE });

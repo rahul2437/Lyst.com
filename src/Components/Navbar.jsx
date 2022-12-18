@@ -24,7 +24,8 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 import { BsCart } from "react-icons/bs";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Logout } from "../Redux/AuthReducer/action";
 function HideOnScroll(props) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
@@ -43,8 +44,8 @@ const Navbar = (props) => {
     return total;
   };
 
-  const isLoggedIn = true;
-
+  const dispatch = useDispatch();
+  const { isAuth, user } = useSelector((store) => store.AuthReducer);
   const [activeProd, setActiveProd] = useState(false);
   const [activeLink, setActiveLink] = useState("Men");
 
@@ -76,7 +77,7 @@ const Navbar = (props) => {
               </MenuList>
             </Menu>
 
-            {isLoggedIn && (
+            {isAuth && (
               <Menu>
                 <MenuButton rightIcon={<ChevronDownIcon />}>
                   Account
@@ -84,15 +85,22 @@ const Navbar = (props) => {
                 </MenuButton>
                 <MenuList>
                   <MenuGroup textAlign={"center"}>
-                    <MenuItem>{"current user name"}</MenuItem>
+                    <MenuItem>{user.displayName || user.email}</MenuItem>
                     <MenuDivider />
-                    <MenuItem>Logout</MenuItem>
+                    <MenuItem>
+                      <NavButton
+                        onClick={() => dispatch(Logout())}
+                        className="hover:underline"
+                      >
+                        <p className="hover:underline">Logout</p>
+                      </NavButton>
+                    </MenuItem>
                   </MenuGroup>
                 </MenuList>
               </Menu>
             )}
 
-            {isLoggedIn && (
+            {isAuth && (
               <Link to="/cart">
                 <HStack>
                   <BsCart fontSize={"20px"} color="action" />{" "}
@@ -101,7 +109,7 @@ const Navbar = (props) => {
               </Link>
             )}
 
-            {!isLoggedIn && (
+            {!isAuth && (
               <Link to="/signup">
                 <NavButton className="hover:underline">
                   <Link to="/login">

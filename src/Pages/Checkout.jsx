@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Checkout = () => {
@@ -8,13 +9,13 @@ const Checkout = () => {
     const name = e.target.name;
     const value = e.target.value;
 
-    setPay({...pay, [name]:value})
-  }
+    setPay({ ...pay, [name]: value });
+  };
 
   const handleCard = (e) => {
     e.preventDefault();
-    console.log(pay)
-  }
+    console.log(pay);
+  };
   return (
     <div>
       <form onSubmit={handleCard}>
@@ -80,7 +81,9 @@ const Checkout = () => {
             </Owner>
           </CardDetail>
           <Submit>
-            <button>Confirm Payment </button>
+            <Link to={"/paysuccess"}>
+              <button>Confirm Payment </button>
+            </Link>
           </Submit>
         </Payment>
       </form>

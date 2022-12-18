@@ -89,9 +89,12 @@ const SecondaryNav = ({ active, link, setActiveProd }) => {
                          className="cursor-pointer"
                          onClick={() => setActiveProd(!active)}
                     >
-                         <Link to={"/admin"}>All {link}'s</Link>
+                         <Link to={"/allMens"}>All {link}'s</Link>
                     </p>
-                    <p className="cursor-pointer">
+                    <p
+                         className="cursor-pointer"
+                         onClick={() => setActiveProd(!active)}
+                    >
                          <BsTagFill
                               style={{
                                    color: "red",
@@ -99,7 +102,7 @@ const SecondaryNav = ({ active, link, setActiveProd }) => {
                                    transform: "rotate(90deg)",
                               }}
                          />
-                         Sale
+                         <Link to={"/sale"}>Sale </Link>
                     </p>
                </SecondaryNavTop>
                <CloseNav onClick={() => setActiveProd(!active)}>
